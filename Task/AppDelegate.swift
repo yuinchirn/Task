@@ -14,6 +14,9 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let parseApplicationId: String = "Cw4ebzunmIPm2MuWUfmGx3x1vPQhdooJjanelodC"
+    let parseClientKey: String = "kPfQJCxt3y3TZdcKviavNpsLhhQL2msK4W6OXIJw"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -21,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         
         // Initialize Parse.
-        Parse.setApplicationId("Cw4ebzunmIPm2MuWUfmGx3x1vPQhdooJjanelodC",
-            clientKey: "kPfQJCxt3y3TZdcKviavNpsLhhQL2msK4W6OXIJw")
+        Parse.setApplicationId(parseApplicationId,
+            clientKey: parseClientKey)
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
