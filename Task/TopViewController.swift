@@ -12,9 +12,17 @@ class TopViewController: UIViewController {
     
     var pageMenu : CAPSPageMenu?
 
+    @IBOutlet weak var addBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setPageMenu()
+        
+    }
+    
+    /* PageMenuの設定、配置 */
+    func setPageMenu(){
         var controllerArray : [UIViewController] = []
         
         var controller1 = self.storyboard!.instantiateViewControllerWithIdentifier("TaskList") as! TaskListViewController
@@ -42,6 +50,7 @@ class TopViewController: UIViewController {
         
         self.view.addSubview(pageMenu!.view)
         
+        self.view.bringSubviewToFront(addBtn)
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,8 +8,12 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController {
+class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let texts = ["ランニング5km", "美容院", "本を一冊読む"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +23,21 @@ class TaskListViewController: UIViewController {
         //            println("Object has been saved.")
         //        }
     }
+    
+    // セルの行数
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return texts.count
+    }
+    
+    // セルの内容を変更
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        
+        cell.textLabel?.text = texts[indexPath.row]
+        return cell
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
