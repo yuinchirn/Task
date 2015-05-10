@@ -7,39 +7,60 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let texts = ["ランニング5km", "美容院", "本を一冊読む"]
+    var taskList:AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        let testObject = PFObject(className: "TestObject")
-        //        testObject["foo"] = "bar"
-        //        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-        //            println("Object has been saved.")
-        //        }
+        // データを取得
+        var query: PFQuery = PFQuery(className: "Task")
+        query.orderByAscending("createdAt")
+        taskList = query.findObjects()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        println(__FUNCTION__)
+        
+        // データを取得
+        var query: PFQuery = PFQuery(className: "Task")
+        query.orderByAscending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            for object in (objects as! [PFObject]) {
+                
+                if(error == nil){
+                    println(object.objectForKey("taskName"))
+                    self.taskList = objects
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     // セルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.count
+        println(__FUNCTION__)
+        return taskList!.count
     }
     
     // セルの内容を変更
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        println(__FUNCTION__)
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = texts[indexPath.row]
+        cell.textLabel?.text = taskList?.objectAtIndex(indexPath.row).objectForKey("taskName") as? String
         return cell
     }
-    
-
 
     override func didReceiveMemoryWarning() {
+        println(__FUNCTION__)
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

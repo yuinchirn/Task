@@ -10,6 +10,7 @@
 		95294A8B1AFECD9500A657E9 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A8A1AFECD9500A657E9 /* CAPSPageMenu.swift */; };
 		95294A8D1AFECDD300A657E9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A8C1AFECDD300A657E9 /* TaskListViewController.swift */; };
 		95294A8F1AFECEC700A657E9 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A8E1AFECEC700A657E9 /* TopViewController.swift */; };
+		95294A911AFED6E500A657E9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A901AFED6E500A657E9 /* TaskViewController.swift */; };
 		95BC7FB41AFDF5D400AF8D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC7FB31AFDF5D400AF8D56 /* AppDelegate.swift */; };
 		95BC7FB91AFDF5D400AF8D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95BC7FB71AFDF5D400AF8D56 /* Main.storyboard */; };
 		95BC7FBB1AFDF5D400AF8D56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BC7FBA1AFDF5D400AF8D56 /* Images.xcassets */; };
@@ -48,6 +49,7 @@
 		95294A8A1AFECD9500A657E9 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		95294A8C1AFECDD300A657E9 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		95294A8E1AFECEC700A657E9 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		95294A901AFED6E500A657E9 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		95BC7FAE1AFDF5D400AF8D56 /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95BC7FB21AFDF5D400AF8D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95BC7FB31AFDF5D400AF8D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				95BC7FB31AFDF5D400AF8D56 /* AppDelegate.swift */,
 				95294A8E1AFECEC700A657E9 /* TopViewController.swift */,
 				95294A8C1AFECDD300A657E9 /* TaskListViewController.swift */,
+				95294A901AFED6E500A657E9 /* TaskViewController.swift */,
 				95BC7FB71AFDF5D400AF8D56 /* Main.storyboard */,
 				95BC7FBA1AFDF5D400AF8D56 /* Images.xcassets */,
 				95BC7FBC1AFDF5D400AF8D56 /* LaunchScreen.xib */,
@@ -305,6 +308,7 @@
 			files = (
 				95294A8F1AFECEC700A657E9 /* TopViewController.swift in Sources */,
 				95294A8D1AFECDD300A657E9 /* TaskListViewController.swift in Sources */,
+				95294A911AFED6E500A657E9 /* TaskViewController.swift in Sources */,
 				95BC7FB41AFDF5D400AF8D56 /* AppDelegate.swift in Sources */,
 				95294A8B1AFECD9500A657E9 /* CAPSPageMenu.swift in Sources */,
 			);
