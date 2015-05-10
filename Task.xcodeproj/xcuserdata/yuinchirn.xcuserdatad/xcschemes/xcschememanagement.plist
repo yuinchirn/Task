@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Notification - Task WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Task WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Task.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>95294AA21AFEF33400A657E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95294ACB1AFEF37200A657E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>95BC7FAD1AFDF5D400AF8D56</key>
 		<dict>
 			<key>primary</key>

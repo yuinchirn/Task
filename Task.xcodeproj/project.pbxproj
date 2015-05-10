@@ -11,6 +11,32 @@
 		95294A8D1AFECDD300A657E9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A8C1AFECDD300A657E9 /* TaskListViewController.swift */; };
 		95294A8F1AFECEC700A657E9 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A8E1AFECEC700A657E9 /* TopViewController.swift */; };
 		95294A911AFED6E500A657E9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294A901AFED6E500A657E9 /* TaskViewController.swift */; };
+		95294AC31AFEF37200A657E9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294AC21AFEF37200A657E9 /* InterfaceController.swift */; };
+		95294AC51AFEF37200A657E9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294AC41AFEF37200A657E9 /* NotificationController.swift */; };
+		95294AC71AFEF37200A657E9 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294AC61AFEF37200A657E9 /* GlanceController.swift */; };
+		95294AC91AFEF37200A657E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294AC81AFEF37200A657E9 /* Images.xcassets */; };
+		95294ACD1AFEF37200A657E9 /* Task WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 95294ACC1AFEF37200A657E9 /* Task WatchKit App.app */; };
+		95294AD51AFEF37200A657E9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95294AD31AFEF37200A657E9 /* Interface.storyboard */; };
+		95294AD71AFEF37200A657E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294AD61AFEF37200A657E9 /* Images.xcassets */; };
+		95294ADA1AFEF37200A657E9 /* Task WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 95294ABD1AFEF37200A657E9 /* Task WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95294AE21AFEF42E00A657E9 /* TaskTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294AE11AFEF42E00A657E9 /* TaskTableRowController.swift */; };
+		95294AE31AFEF87700A657E9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FD81AFDF73900AF8D56 /* Bolts.framework */; };
+		95294AE41AFEF87700A657E9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FD61AFDF70A00AF8D56 /* Parse.framework */; };
+		95294AE51AFEF87700A657E9 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FDA1AFDF75B00AF8D56 /* ParseCrashReporting.framework */; };
+		95294AE61AFEF87700A657E9 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FDD1AFDF75B00AF8D56 /* ParseFacebookUtils.framework */; };
+		95294AE71AFEF87700A657E9 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FDC1AFDF75B00AF8D56 /* ParseFacebookUtilsV4.framework */; };
+		95294AE81AFEF87700A657E9 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FDB1AFDF75B00AF8D56 /* ParseUI.framework */; };
+		95294AE91AFEF89800A657E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FF61AFDF8B500AF8D56 /* SystemConfiguration.framework */; };
+		95294AEA1AFEF8A100A657E9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FF21AFDF88D00AF8D56 /* StoreKit.framework */; };
+		95294AEB1AFEF8B400A657E9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FF41AFDF89B00AF8D56 /* libz.dylib */; };
+		95294AEC1AFEF8BB00A657E9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FF01AFDF88600AF8D56 /* Security.framework */; };
+		95294AED1AFEF8CE00A657E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FEE1AFDF87A00AF8D56 /* MobileCoreServices.framework */; };
+		95294AEE1AFEF8D600A657E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FEC1AFDF86C00AF8D56 /* CoreLocation.framework */; };
+		95294AEF1AFEF8EB00A657E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FEA1AFDF86300AF8D56 /* CoreGraphics.framework */; };
+		95294AF01AFEF8F200A657E9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FE81AFDF85500AF8D56 /* CFNetwork.framework */; };
+		95294AF11AFEF8FD00A657E9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FE61AFDF84600AF8D56 /* AudioToolbox.framework */; };
+		95294AF21AFEF90300A657E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FE41AFDF83D00AF8D56 /* QuartzCore.framework */; };
+		95294AF31AFEF91600A657E9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC7FE21AFDF82D00AF8D56 /* libsqlite3.dylib */; };
 		95BC7FB41AFDF5D400AF8D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC7FB31AFDF5D400AF8D56 /* AppDelegate.swift */; };
 		95BC7FB91AFDF5D400AF8D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95BC7FB71AFDF5D400AF8D56 /* Main.storyboard */; };
 		95BC7FBB1AFDF5D400AF8D56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BC7FBA1AFDF5D400AF8D56 /* Images.xcassets */; };
@@ -36,6 +62,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		95294ACE1AFEF37200A657E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95BC7FA61AFDF5D400AF8D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95294ACB1AFEF37200A657E9;
+			remoteInfo = "Task WatchKit App";
+		};
+		95294AD81AFEF37200A657E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95BC7FA61AFDF5D400AF8D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95294ABC1AFEF37200A657E9;
+			remoteInfo = "Task WatchKit Extension";
+		};
 		95BC7FC41AFDF5D500AF8D56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95BC7FA61AFDF5D400AF8D56 /* Project object */;
@@ -45,11 +85,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95294AB81AFEF33400A657E9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				95294ADA1AFEF37200A657E9 /* Task WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		95294A8A1AFECD9500A657E9 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		95294A8C1AFECDD300A657E9 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		95294A8E1AFECEC700A657E9 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		95294A901AFED6E500A657E9 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		95294ABD1AFEF37200A657E9 /* Task WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Task WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95294AC01AFEF37200A657E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95294AC11AFEF37200A657E9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		95294AC21AFEF37200A657E9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		95294AC41AFEF37200A657E9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		95294AC61AFEF37200A657E9 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		95294AC81AFEF37200A657E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		95294ACC1AFEF37200A657E9 /* Task WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95294AD21AFEF37200A657E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95294AD41AFEF37200A657E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		95294AD61AFEF37200A657E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		95294AE11AFEF42E00A657E9 /* TaskTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableRowController.swift; sourceTree = "<group>"; };
 		95BC7FAE1AFDF5D400AF8D56 /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95BC7FB21AFDF5D400AF8D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95BC7FB31AFDF5D400AF8D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +145,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		95294ABA1AFEF37200A657E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95294AF31AFEF91600A657E9 /* libsqlite3.dylib in Frameworks */,
+				95294AF21AFEF90300A657E9 /* QuartzCore.framework in Frameworks */,
+				95294AF11AFEF8FD00A657E9 /* AudioToolbox.framework in Frameworks */,
+				95294AF01AFEF8F200A657E9 /* CFNetwork.framework in Frameworks */,
+				95294AEF1AFEF8EB00A657E9 /* CoreGraphics.framework in Frameworks */,
+				95294AEE1AFEF8D600A657E9 /* CoreLocation.framework in Frameworks */,
+				95294AED1AFEF8CE00A657E9 /* MobileCoreServices.framework in Frameworks */,
+				95294AEC1AFEF8BB00A657E9 /* Security.framework in Frameworks */,
+				95294AEB1AFEF8B400A657E9 /* libz.dylib in Frameworks */,
+				95294AEA1AFEF8A100A657E9 /* StoreKit.framework in Frameworks */,
+				95294AE91AFEF89800A657E9 /* SystemConfiguration.framework in Frameworks */,
+				95294AE31AFEF87700A657E9 /* Bolts.framework in Frameworks */,
+				95294AE41AFEF87700A657E9 /* Parse.framework in Frameworks */,
+				95294AE51AFEF87700A657E9 /* ParseCrashReporting.framework in Frameworks */,
+				95294AE61AFEF87700A657E9 /* ParseFacebookUtils.framework in Frameworks */,
+				95294AE71AFEF87700A657E9 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				95294AE81AFEF87700A657E9 /* ParseUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95BC7FAB1AFDF5D400AF8D56 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,10 +211,52 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		95294ABE1AFEF37200A657E9 /* Task WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				95294AC21AFEF37200A657E9 /* InterfaceController.swift */,
+				95294AC41AFEF37200A657E9 /* NotificationController.swift */,
+				95294AC61AFEF37200A657E9 /* GlanceController.swift */,
+				95294AE11AFEF42E00A657E9 /* TaskTableRowController.swift */,
+				95294AC81AFEF37200A657E9 /* Images.xcassets */,
+				95294ABF1AFEF37200A657E9 /* Supporting Files */,
+			);
+			path = "Task WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		95294ABF1AFEF37200A657E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95294AC01AFEF37200A657E9 /* Info.plist */,
+				95294AC11AFEF37200A657E9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95294AD01AFEF37200A657E9 /* Task WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				95294AD31AFEF37200A657E9 /* Interface.storyboard */,
+				95294AD61AFEF37200A657E9 /* Images.xcassets */,
+				95294AD11AFEF37200A657E9 /* Supporting Files */,
+			);
+			path = "Task WatchKit App";
+			sourceTree = "<group>";
+		};
+		95294AD11AFEF37200A657E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95294AD21AFEF37200A657E9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		95BC7FA51AFDF5D400AF8D56 = {
 			isa = PBXGroup;
 			children = (
 				95BC7FB01AFDF5D400AF8D56 /* Task */,
+				95294ABE1AFEF37200A657E9 /* Task WatchKit Extension */,
+				95294AD01AFEF37200A657E9 /* Task WatchKit App */,
 				95BC7FD31AFDF69800AF8D56 /* Frameworks */,
 				95BC7FC61AFDF5D500AF8D56 /* TaskTests */,
 				95BC7FAF1AFDF5D400AF8D56 /* Products */,
@@ -136,6 +268,8 @@
 			children = (
 				95BC7FAE1AFDF5D400AF8D56 /* Task.app */,
 				95BC7FC31AFDF5D500AF8D56 /* TaskTests.xctest */,
+				95294ABD1AFEF37200A657E9 /* Task WatchKit Extension.appex */,
+				95294ACC1AFEF37200A657E9 /* Task WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +342,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		95294ABC1AFEF37200A657E9 /* Task WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95294ADE1AFEF37200A657E9 /* Build configuration list for PBXNativeTarget "Task WatchKit Extension" */;
+			buildPhases = (
+				95294AB91AFEF37200A657E9 /* Sources */,
+				95294ABA1AFEF37200A657E9 /* Frameworks */,
+				95294ABB1AFEF37200A657E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95294ACF1AFEF37200A657E9 /* PBXTargetDependency */,
+			);
+			name = "Task WatchKit Extension";
+			productName = "Task WatchKit Extension";
+			productReference = 95294ABD1AFEF37200A657E9 /* Task WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		95294ACB1AFEF37200A657E9 /* Task WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95294ADB1AFEF37200A657E9 /* Build configuration list for PBXNativeTarget "Task WatchKit App" */;
+			buildPhases = (
+				95294ACA1AFEF37200A657E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Task WatchKit App";
+			productName = "Task WatchKit App";
+			productReference = 95294ACC1AFEF37200A657E9 /* Task WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		95BC7FAD1AFDF5D400AF8D56 /* Task */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95BC7FCD1AFDF5D500AF8D56 /* Build configuration list for PBXNativeTarget "Task" */;
@@ -215,10 +382,12 @@
 				95BC7FAA1AFDF5D400AF8D56 /* Sources */,
 				95BC7FAB1AFDF5D400AF8D56 /* Frameworks */,
 				95BC7FAC1AFDF5D400AF8D56 /* Resources */,
+				95294AB81AFEF33400A657E9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				95294AD91AFEF37200A657E9 /* PBXTargetDependency */,
 			);
 			name = Task;
 			productName = Task;
@@ -252,6 +421,13 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = yuinchirn;
 				TargetAttributes = {
+					95294ABC1AFEF37200A657E9 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5FA42WKW3U;
+					};
+					95294ACB1AFEF37200A657E9 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					95BC7FAD1AFDF5D400AF8D56 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 5FA42WKW3U;
@@ -277,11 +453,31 @@
 			targets = (
 				95BC7FAD1AFDF5D400AF8D56 /* Task */,
 				95BC7FC21AFDF5D500AF8D56 /* TaskTests */,
+				95294ABC1AFEF37200A657E9 /* Task WatchKit Extension */,
+				95294ACB1AFEF37200A657E9 /* Task WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		95294ABB1AFEF37200A657E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95294AC91AFEF37200A657E9 /* Images.xcassets in Resources */,
+				95294ACD1AFEF37200A657E9 /* Task WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95294ACA1AFEF37200A657E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95294AD51AFEF37200A657E9 /* Interface.storyboard in Resources */,
+				95294AD71AFEF37200A657E9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95BC7FAC1AFDF5D400AF8D56 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +498,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		95294AB91AFEF37200A657E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95294AC51AFEF37200A657E9 /* NotificationController.swift in Sources */,
+				95294AC31AFEF37200A657E9 /* InterfaceController.swift in Sources */,
+				95294AE21AFEF42E00A657E9 /* TaskTableRowController.swift in Sources */,
+				95294AC71AFEF37200A657E9 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95BC7FAA1AFDF5D400AF8D56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +532,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		95294ACF1AFEF37200A657E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95294ACB1AFEF37200A657E9 /* Task WatchKit App */;
+			targetProxy = 95294ACE1AFEF37200A657E9 /* PBXContainerItemProxy */;
+		};
+		95294AD91AFEF37200A657E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95294ABC1AFEF37200A657E9 /* Task WatchKit Extension */;
+			targetProxy = 95294AD81AFEF37200A657E9 /* PBXContainerItemProxy */;
+		};
 		95BC7FC51AFDF5D500AF8D56 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 95BC7FAD1AFDF5D400AF8D56 /* Task */;
@@ -333,6 +550,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		95294AD31AFEF37200A657E9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95294AD41AFEF37200A657E9 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		95BC7FB71AFDF5D400AF8D56 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -352,6 +577,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		95294ADC1AFEF37200A657E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Task_WatchKit_Extension;
+				INFOPLIST_FILE = "Task WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		95294ADD1AFEF37200A657E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Task_WatchKit_Extension;
+				INFOPLIST_FILE = "Task WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		95294ADF1AFEF37200A657E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Task WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		95294AE01AFEF37200A657E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Task WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		95BC7FCB1AFDF5D500AF8D56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -500,6 +791,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		95294ADB1AFEF37200A657E9 /* Build configuration list for PBXNativeTarget "Task WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95294ADC1AFEF37200A657E9 /* Debug */,
+				95294ADD1AFEF37200A657E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		95294ADE1AFEF37200A657E9 /* Build configuration list for PBXNativeTarget "Task WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95294ADF1AFEF37200A657E9 /* Debug */,
+				95294AE01AFEF37200A657E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		95BC7FA91AFDF5D400AF8D56 /* Build configuration list for PBXProject "Task" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

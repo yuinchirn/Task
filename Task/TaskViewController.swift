@@ -49,6 +49,7 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
         task.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             println("Object has been saved.")
         }
+        task.pinInBackground()
     }
     
     /*

@@ -16,6 +16,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     var taskList:AnyObject?
     
+    var taskName:String = "taskName"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         var query: PFQuery = PFQuery(className: "Task")
         query.orderByAscending("createdAt")
         taskList = query.findObjects()
+
         
     }
     
@@ -30,13 +33,16 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         println(__FUNCTION__)
         
         // データを取得
+        // TODO ネットワークが繋がっていない場合は取りに行かない。
+        // TODO 基本的に書き込み、取得するDBはローカルのDBにする。
+        // 適当なタイミングでリモートと同期
         var query: PFQuery = PFQuery(className: "Task")
         query.orderByAscending("createdAt")
+        query.fromLocalDatastore()
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             for object in (objects as! [PFObject]) {
                 
                 if(error == nil){
-                    println(object.objectForKey("taskName"))
                     self.taskList = objects
                     self.tableView.reloadData()
                 }
