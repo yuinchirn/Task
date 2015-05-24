@@ -49,8 +49,6 @@ class TopViewController: UIViewController {
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 0.0, self.view.frame.width, self.view.frame.height), options: parameters)
         
         self.view.addSubview(pageMenu!.view)
-        
-        self.view.bringSubviewToFront(addBtn)
     }
 
     override func didReceiveMemoryWarning() {

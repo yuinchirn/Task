@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -16,46 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCs-MD-lgd">
-                                <rect key="frame" x="514" y="515" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.99215686270000003" green="0.58823529409999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="aqg-z7-au8"/>
-                                    <constraint firstAttribute="width" constant="70" id="pdw-1X-dUc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="titleShadowOffset" width="100" height="100"/>
-                                <state key="normal" title="＋">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="0.0" height="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="1.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="uA3-PR-DaU" kind="presentation" id="OxE-tc-sk4"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RCs-MD-lgd" secondAttribute="bottom" constant="15" id="eaY-l3-iCc"/>
-                            <constraint firstItem="RCs-MD-lgd" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mSi-Zc-Xj3"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="addBtn" destination="RCs-MD-lgd" id="NpP-iQ-kC0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +44,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dFp-w5-Lsv" id="7hW-ls-wpU">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="NIn-VJ-hbP" appends="YES" id="5ZK-fD-dLU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -89,22 +55,147 @@
                                     <outlet property="delegate" destination="Hix-SM-CPQ" id="JS0-SQ-asu"/>
                                 </connections>
                             </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-wI-cAp">
+                                <rect key="frame" x="16" y="630" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.58823529409999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="6W0-XP-GRJ"/>
+                                    <constraint firstAttribute="width" constant="70" id="erd-me-dvJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="100" height="100"/>
+                                <state key="normal" title="Undo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9D-SS-axM">
+                                <rect key="frame" x="265" y="630" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.58823529409999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="az6-Un-pio"/>
+                                    <constraint firstAttribute="width" constant="70" id="goL-BV-hnT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="100" height="100"/>
+                                <state key="normal" title="Doing">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvP-CU-zYM">
+                                <rect key="frame" x="514" y="630" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.58823529409999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0ON-e3-F60"/>
+                                    <constraint firstAttribute="width" constant="70" id="u3h-Ik-K3K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="100" height="100"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6E-N2-DaJ">
+                                <rect key="frame" x="265" y="515" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.58823529409999997" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="SrG-aB-V0o"/>
+                                    <constraint firstAttribute="width" constant="70" id="rK8-a2-4I0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="100" height="100"/>
+                                <state key="normal" title="＋">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="uA3-PR-DaU" kind="presentation" id="JMI-2U-iln"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zlo-ea-j2w" firstAttribute="top" secondItem="htd-ov-1Ko" secondAttribute="bottom" id="2Qi-nM-rx9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VvP-CU-zYM" secondAttribute="trailing" id="71T-sO-jQN"/>
+                            <constraint firstItem="Zpp-wI-cAp" firstAttribute="leading" secondItem="KPK-sG-AlW" secondAttribute="leadingMargin" id="9Ts-3g-5tb"/>
                             <constraint firstItem="zlo-ea-j2w" firstAttribute="top" secondItem="htd-ov-1Ko" secondAttribute="bottom" id="A53-JZ-F4A"/>
+                            <constraint firstAttribute="centerX" secondItem="N6E-N2-DaJ" secondAttribute="centerX" id="AtM-C1-RrP"/>
+                            <constraint firstItem="zlo-ea-j2w" firstAttribute="top" secondItem="VvP-CU-zYM" secondAttribute="bottom" constant="-100" id="Gj2-2l-oxb"/>
                             <constraint firstItem="htd-ov-1Ko" firstAttribute="leading" secondItem="KPK-sG-AlW" secondAttribute="leadingMargin" constant="-16" id="Kez-qf-PGr"/>
                             <constraint firstItem="htd-ov-1Ko" firstAttribute="top" secondItem="KPK-sG-AlW" secondAttribute="topMargin" id="MBp-ja-Dnf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="N6E-N2-DaJ" secondAttribute="bottom" constant="15" id="a7n-X2-mg0"/>
+                            <constraint firstItem="zlo-ea-j2w" firstAttribute="top" secondItem="Zpp-wI-cAp" secondAttribute="bottom" constant="-100" id="fFX-lz-Tkd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="htd-ov-1Ko" secondAttribute="trailing" constant="-16" id="m8T-eC-gEq"/>
+                            <constraint firstItem="zlo-ea-j2w" firstAttribute="top" secondItem="q9D-SS-axM" secondAttribute="bottom" constant="-100" id="mEr-fS-aai"/>
+                            <constraint firstAttribute="centerX" secondItem="q9D-SS-axM" secondAttribute="centerX" id="rvq-Tg-0GU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addBtn" destination="N6E-N2-DaJ" id="drN-Is-teK"/>
+                        <outlet property="doingBtn" destination="q9D-SS-axM" id="XeT-jh-dhc"/>
+                        <outlet property="doneBtn" destination="VvP-CU-zYM" id="eOy-yC-QTz"/>
                         <outlet property="tableView" destination="htd-ov-1Ko" id="eqc-U5-9KF"/>
+                        <outlet property="undoBtn" destination="Zpp-wI-cAp" id="x2s-p6-fPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dad-ZL-X5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="NIn-VJ-hbP">
+                    <connections>
+                        <action selector="dragGesture:" destination="Hix-SM-CPQ" id="dPV-5K-tLq"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1049" y="312"/>
+            <point key="canvasLocation" x="1073" y="388"/>
         </scene>
         <!--Task View Controller-->
         <scene sceneID="qvW-WA-VFT">
@@ -210,7 +301,7 @@
                                     <constraint firstAttribute="height" constant="50" id="OKM-S6-Hly"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBE-q1-tOs">
