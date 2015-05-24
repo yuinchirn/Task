@@ -16,20 +16,18 @@ class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setPageMenu()
-        
     }
     
     /* PageMenuの設定、配置 */
     func setPageMenu(){
         var controllerArray : [UIViewController] = []
         
-        var controller1 = self.storyboard!.instantiateViewControllerWithIdentifier("TaskList") as! TaskListViewController
+        var controller1 = self.storyboard!.instantiateViewControllerWithIdentifier(taskListIdentifier) as! TaskListViewController
         controller1.title = "Undo"
-        var controller2 = self.storyboard!.instantiateViewControllerWithIdentifier("TaskList") as! TaskListViewController
+        var controller2 = self.storyboard!.instantiateViewControllerWithIdentifier(taskListIdentifier) as! TaskListViewController
         controller2.title = "Doing"
-        var controller3 = self.storyboard!.instantiateViewControllerWithIdentifier("TaskList") as! TaskListViewController
+        var controller3 = self.storyboard!.instantiateViewControllerWithIdentifier(taskListIdentifier) as! TaskListViewController
         controller3.title = "Done"
         
         controllerArray.append(controller1)
@@ -40,7 +38,7 @@ class TopViewController: UIViewController {
             "viewBackgroundColor": UIColor.blackColor(),
             "selectionIndicatorColor": UIColor.orangeColor(),
             "bottomMenuHairlineColor": UIColor.blackColor(),
-            "menuItemFont": UIFont(name: "HelveticaNeue", size: 13.0)!,
+            "menuItemFont": UIFont(name: "HelveticaNeue", size: 16.0)!,
             "menuHeight": 80.0,
             "menuItemWidth": 120.0,
             "centerMenuItems": true,
@@ -55,16 +53,4 @@ class TopViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

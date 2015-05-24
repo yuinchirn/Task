@@ -14,10 +14,38 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var taskNameTextField: UITextField!
     
+    var objectId:String?
+    var editingTask:PFObject?
+    
+    var createMode:Bool {
+        get{
+            return objectId == nil
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        if let id = objectId {
+            // データを取得
+            var query: PFQuery = PFQuery(className: "Task")
+            query.whereKey("objectId", equalTo: id)
+            query.orderByAscending("createdAt")
+            
+            editingTask = query.findObjects()?.first as? PFObject
+            if let task = editingTask {
+                taskNameTextField.text = task.valueForKey("taskName") as! String
+            }
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        objectId = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,20 +64,45 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
     /* checkボタン押下時のイベント */
     @IBAction func checkBtn(sender: AnyObject) {
         
-        if !taskNameTextField.text.isEmpty {
+        if taskNameTextField.text.isEmpty {
+            self.dismissViewControllerAnimated(true, completion:nil)
+            return
+        }
+        
+        if createMode {
             saveTask()
+        } else {
+            updateTask()
         }
         self.dismissViewControllerAnimated(true, completion:nil)
     }
     
     /* タスクを保存 */
     func saveTask(){
-        let task = PFObject(className: "Task")
-        task["taskName"] = taskNameTextField.text
+        let task = PFObject(className: taskTable)
+        task.setValue(taskNameTextField.text, forKey: taskNameKey)
+        task.setValue(1, forKey: taskStatus)
         task.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Object has been saved.")
+            if let err = error {
+                println("error：\(err.description)")
+            } else {
+                println("Object has been saved.")
+            }
         }
         task.pinInBackground()
+    }
+    
+    /* タスクを更新 */
+    func updateTask(){
+        editingTask?.setValue(taskNameTextField.text, forKey: taskNameKey)
+        editingTask?.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if let err = error {
+                println("error：\(err.description)")
+            } else {
+                println("Object has been updated.")
+            }
+        }
+        editingTask?.pinInBackground()
     }
     
     /*

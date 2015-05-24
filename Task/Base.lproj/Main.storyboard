@@ -159,7 +159,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="uA3-PR-DaU" kind="presentation" id="JMI-2U-iln"/>
+                                    <segue destination="uA3-PR-DaU" kind="presentation" identifier="editTask" id="JMI-2U-iln"/>
                                 </connections>
                             </button>
                         </subviews>
