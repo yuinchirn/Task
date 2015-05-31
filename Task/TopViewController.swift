@@ -24,11 +24,11 @@ class TopViewController: UIViewController {
         var controllerArray : [UIViewController] = []
         
         var controller1 = self.storyboard!.instantiateViewControllerWithIdentifier(taskListIdentifier) as! TaskListViewController
-        controller1.title = "Undo"
+        controller1.title = TaskStatus.Undo.getName()
         var controller2 = self.storyboard!.instantiateViewControllerWithIdentifier(taskListIdentifier) as! TaskListViewController
-        controller2.title = "Doing"
+        controller2.title = TaskStatus.Doing.getName()
         var controller3 = self.storyboard!.instantiateViewControllerWithIdentifier(taskListIdentifier) as! TaskListViewController
-        controller3.title = "Done"
+        controller3.title = TaskStatus.Done.getName()
         
         controllerArray.append(controller1)
         controllerArray.append(controller2)

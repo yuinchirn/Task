@@ -25,6 +25,8 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TODO Listビュー下スワイプで表示したい。
 
         // Do any additional setup after loading the view.
     }
@@ -81,7 +83,7 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
     func saveTask(){
         let task = PFObject(className: taskTable)
         task.setValue(taskNameTextField.text, forKey: taskNameKey)
-        task.setValue(1, forKey: taskStatus)
+        task.setValue(1, forKey: taskStatusKey)
         task.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if let err = error {
                 println("error：\(err.description)")

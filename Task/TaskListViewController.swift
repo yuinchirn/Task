@@ -12,36 +12,28 @@ import Bolts
 
 class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
+    // UI関連
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var undoBtn: UIButton?
-    @IBOutlet weak var doingBtn: UIButton?
-    @IBOutlet weak var doneBtn: UIButton?
+    @IBOutlet weak var undoBtn: UIButton!
+    @IBOutlet weak var doingBtn: UIButton!
+    @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var addBtn: UIButton!
     
-    var selectedCellRow:Int?
-    var taskList:AnyObject?
-    var isShowChangeBtns = false
+    // プロパティ
+    var taskList:AnyObject?             // Taskリストのオブジェクト
+    var selectedCellRow:Int?            // 現在選択されているrow
+    var _indexPath:NSIndexPath?         // 現在選択されているPath
+    var isShowStatusChangeBtns = false  // Status変更ボタンの表示フラグ
+    var taskStatus : Int?               // 現在のtaskStatus
     
-    let showHeight = UIScreen.mainScreen().bounds.size.height - 170
-    let hideHeight = UIScreen.mainScreen().bounds.size.height + 170
+    let showHeight = UIScreen.mainScreen().bounds.size.height - 170 // button表示時の高さ
+    let hideHeight = UIScreen.mainScreen().bounds.size.height + 170 // button非表示時の高さ
+    
+    // MARK: - Delegate (ViewController)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableData()
         setGestureRecognizer()
-    }
-    
-    func setTableData(){
-        // データを取得
-        var query: PFQuery = PFQuery(className: taskTable)
-        query.orderByAscending("createdAt")
-        taskList = query.findObjects()
-    }
-    
-    func setGestureRecognizer(){
-        var longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "cellLongPressed:")
-        longPressRecognizer.delegate = self
-        tableView.addGestureRecognizer(longPressRecognizer)
     }
     
     /* PageMenuバグ用View修正 */
@@ -62,6 +54,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         // TODO ネットワークが繋がっていない場合は取りに行かない。
         // TODO 基本的に書き込み、取得するDBはローカルのDBにする。
         // 適当なタイミングでリモートと同期
+        /*
         var query: PFQuery = PFQuery(className: taskTable)
         query.orderByAscending("createdAt")
         query.fromLocalDatastore()
@@ -72,6 +65,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                     self.tableView.reloadData()
                 }
             }
+        }
+        */
+        setTableData()
+        
+        if tableView != nil {
+          
+            tableView.reloadData()
         }
         
         if let undo = undoBtn, doing = doingBtn, done = doneBtn, add = addBtn {
@@ -95,6 +95,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    // MARK: - Delegate (TableView)
+    
     // セルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // println(__FUNCTION__)
@@ -103,51 +105,94 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     // セルの内容を変更
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // println(__FUNCTION__)
+        println(__FUNCTION__)
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
         cell.textLabel?.text = taskList?.objectAtIndex(indexPath.row).objectForKey(taskNameKey) as? String
+        
+        
+        var backView = UIView(frame: cell.frame)
+        backView.backgroundColor = UIColor.whiteColor()
+        cell.backgroundView = backView
+        
+        if let backGroundView = cell.backgroundView {
+            println("balck!!!!")
+            backGroundView.backgroundColor = UIColor.blueColor()
+            backGroundView.alpha = 0.1
+        }
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if isShowChangeBtns {
-            if let undo = undoBtn, doing = doingBtn, done = doneBtn, add = addBtn {
-                UIView.animateWithDuration(0.8, // アニメーションの時間
-                    animations: {() -> Void  in
-                        // アニメーションする処理
-                        undo.frame.origin.y = self.hideHeight
-                        undo.hidden = false
-                        doing.frame.origin.y = self.hideHeight
-                        doing.hidden = false
-                        done.frame.origin.y = self.hideHeight
-                        done.hidden = false
-                        add.frame.origin.y = self.showHeight
-                        add.hidden = false
-                        
-                })
-            }
-        } else {
-            if let undo = undoBtn, doing = doingBtn, done = doneBtn, add = addBtn {
-                UIView.animateWithDuration(0.8, // アニメーションの時間
-                    animations: {() -> Void  in
-                        // アニメーションする処理
-                        undo.frame.origin.y = self.showHeight
-                        undo.hidden = false
-                        doing.frame.origin.y = self.showHeight
-                        doing.hidden = false
-                        done.frame.origin.y = self.showHeight
-                        done.hidden = false
-                        add.frame.origin.y = self.hideHeight
-                        
-                })
-            }
+        // 選択されたrowを保持
+        selectedCellRow = indexPath.row
+        _indexPath = indexPath
+        
+        switchBtns()
+    }
+    
+    // MARK: - Other Method
+    
+    func setTableData(){
+        
+        var query: PFQuery = PFQuery(className: taskTable)
+        
+        // TODO 分岐をもっと簡潔に
+        if self.title == TaskStatus.Undo.getName() {
+            taskStatus = TaskStatus.Undo.rawValue
         }
-        self.isShowChangeBtns = !self.isShowChangeBtns
+        
+        if self.title == TaskStatus.Doing.getName() {
+            taskStatus = TaskStatus.Doing.rawValue
+        }
+        
+        if self.title == TaskStatus.Done.getName() {
+            taskStatus = TaskStatus.Done.rawValue
+        }
+        
+        if let status = taskStatus {
+            query.whereKey(taskStatusKey, equalTo: status)
+        }
+        
+        // データを取得
+        query.orderByAscending("createdAt")
+        taskList = query.findObjects()
+    }
+    
+    func setGestureRecognizer(){
+        var longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "cellLongPressed:")
+        longPressRecognizer.delegate = self
+        tableView.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    /* 表示するボタンの切り替え */
+    private func switchBtns() {
+        
+        // TODO いま表示中のステータス変更ボタンを非表示に。
+        
+        if isShowStatusChangeBtns {
+                UIView.animateWithDuration(0.8,
+                    animations: {() -> Void  in
+                        self.undoBtn.frame.origin.y = self.hideHeight
+                        self.doingBtn.frame.origin.y = self.hideHeight
+                        self.doneBtn.frame.origin.y = self.hideHeight
+                        self.addBtn.frame.origin.y = self.showHeight
+                })
+        } else {
+                UIView.animateWithDuration(0.8,
+                    animations: {() -> Void  in
+                        self.undoBtn.frame.origin.y = self.showHeight
+                        self.doingBtn.frame.origin.y = self.showHeight
+                        self.doneBtn.frame.origin.y = self.showHeight
+                        self.addBtn.frame.origin.y = self.hideHeight
+                })
+        }
+        self.isShowStatusChangeBtns = !self.isShowStatusChangeBtns
     }
 
+    /* cellを長押した場合の処理 */
     func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
         
         let point = recognizer.locationInView(tableView)
@@ -156,12 +201,30 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath == nil {
         
         } else if recognizer.state == UIGestureRecognizerState.Began  {
-            // 長押しされた場合の処理
-            println("長押しされたcellのindexPath:\(indexPath!.row)")
             selectedCellRow = indexPath!.row
             self.performSegueWithIdentifier("editTask", sender: self)
          }
+    }
+    
+    /* Taskのステータス変更 */
+    @IBAction func changeStatus(statusBtn: UIButton) {
         
+        let taskStatusValue = statusBtn.tag
+        let toTaskStatus = TaskStatus(rawValue: taskStatusValue)
+        
+        if let list: AnyObject = taskList, row = selectedCellRow, taskStatus = toTaskStatus {
+            let task = list.objectAtIndex(row) as! PFObject
+            task.setValue(taskStatus.rawValue, forKey: taskStatusKey)
+            task.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if let err = error {
+                    println("error：\(err.description)")
+                } else {
+                    println("Object has been saved.")
+                    self.setTableData()
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -170,15 +233,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
         var taskViewController:TaskViewController = segue.destinationViewController as! TaskViewController
         
         if let list: AnyObject = taskList, row = selectedCellRow {

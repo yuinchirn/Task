@@ -12,7 +12,7 @@ import UIKit
 /* DB系 */
 let taskTable = "Task"
 let taskNameKey = "taskName"
-let taskStatus = "taskStatus"
+let taskStatusKey = "taskStatus"
 
 
 let taskListIdentifier = "TaskList"
