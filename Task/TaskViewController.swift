@@ -16,6 +16,7 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
     
     var objectId:String?
     var editingTask:PFObject?
+    var taskStatus:TaskStatus?
     
     var createMode:Bool {
         get{
@@ -27,8 +28,6 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // TODO Listビュー下スワイプで表示したい。
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,10 +55,8 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
-        
         // キーボードを閉じる
         textField.resignFirstResponder()
-        
         return true
     }
     
@@ -83,7 +80,7 @@ class TaskViewController: UIViewController, UITextFieldDelegate {
     func saveTask(){
         let task = PFObject(className: taskTable)
         task.setValue(taskNameTextField.text, forKey: taskNameKey)
-        task.setValue(1, forKey: taskStatusKey)
+        task.setValue(taskStatus?.rawValue, forKey: taskStatusKey)
         task.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if let err = error {
                 println("error：\(err.description)")

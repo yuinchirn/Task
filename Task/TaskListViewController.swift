@@ -24,7 +24,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     var selectedCellRow:Int?            // 現在選択されているrow
     var _indexPath:NSIndexPath?         // 現在選択されているPath
     var isShowStatusChangeBtns = false  // Status変更ボタンの表示フラグ
-    var taskStatus : Int?               // 現在のtaskStatus
+    var taskStatus : TaskStatus?               // 現在のtaskStatus
     
     let showHeight = UIScreen.mainScreen().bounds.size.height - 170 // button表示時の高さ
     let hideHeight = UIScreen.mainScreen().bounds.size.height + 170 // button非表示時の高さ
@@ -70,7 +70,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         setTableData()
         
         if tableView != nil {
-          
             tableView.reloadData()
         }
         
@@ -137,23 +136,22 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func setTableData(){
         
-        var query: PFQuery = PFQuery(className: taskTable)
-        
         // TODO 分岐をもっと簡潔に
         if self.title == TaskStatus.Undo.getName() {
-            taskStatus = TaskStatus.Undo.rawValue
+            taskStatus = TaskStatus.Undo
         }
         
         if self.title == TaskStatus.Doing.getName() {
-            taskStatus = TaskStatus.Doing.rawValue
+            taskStatus = TaskStatus.Doing
         }
         
         if self.title == TaskStatus.Done.getName() {
-            taskStatus = TaskStatus.Done.rawValue
+            taskStatus = TaskStatus.Done
         }
         
+        var query: PFQuery = PFQuery(className: taskTable)
         if let status = taskStatus {
-            query.whereKey(taskStatusKey, equalTo: status)
+            query.whereKey(taskStatusKey, equalTo: status.rawValue)
         }
         
         // データを取得
@@ -230,7 +228,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         println(__FUNCTION__)
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Navigation
@@ -242,6 +239,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             let task = list.objectAtIndex(row) as! PFObject
             taskViewController.objectId = task.objectId
         }
+        taskViewController.taskStatus = taskStatus
     }
 
 
