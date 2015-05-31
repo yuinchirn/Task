@@ -128,7 +128,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         // 選択されたrowを保持
         selectedCellRow = indexPath.row
         _indexPath = indexPath
-        
         switchBtns()
     }
     

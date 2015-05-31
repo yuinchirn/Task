@@ -44,9 +44,6 @@ class GlanceController: WKInterfaceController {
         if taskList != nil {
             
             println(taskList!.count)
-            
-            
-            
             for num in 0...8 {
                 let controller = table.rowControllerAtIndex(num) as? TaskTableRowController
                 controller!.taskName.setText(taskList?.objectAtIndex(num).objectForKey("taskName") as? String)
